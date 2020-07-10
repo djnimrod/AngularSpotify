@@ -9,16 +9,12 @@ import { SpotifyService } from "../../services/spotify.service";
 })
 export class HomeComponent {
   // paises : any = [];
-  // constructor(private http: HttpClient) { }
+  nuevasCanciones: any[] = [];
   constructor(private spotify: SpotifyService) {
-    this.spotify.getNewReleases();
+    this.spotify.getNewReleases().subscribe((data: any) => {
+      // console.log(data);
+      console.log(data.albums.items);
+      this.nuevasCanciones = data.albums.items;
+    });
   }
-
-  // ngOnInit() {
-  // this.http.get('https://restcountries.eu/rest/v2/lang/es')
-  // .subscribe( resp => {
-  //   this.paises = resp;
-  //   console.log(resp);
-  // });
-  // }
 }
