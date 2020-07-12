@@ -9,6 +9,7 @@ import { SearchComponent } from "./components/search/search.component";
 import { ArtistaComponent } from "./components/artista/artista.component";
 import { NavbarComponent } from "./components/shared/navbar/navbar.component";
 import { ROUTES } from "./app.routes";
+import { NoimagePipe } from './pipes/noimage.pipe';
 // import { SpotifyService } from "./services/spotify.service";
 
 @NgModule({
@@ -18,6 +19,7 @@ import { ROUTES } from "./app.routes";
     SearchComponent,
     ArtistaComponent,
     NavbarComponent,
+    NoimagePipe,
   ],
   imports: [
     BrowserModule,
